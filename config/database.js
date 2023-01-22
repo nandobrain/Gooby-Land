@@ -1,0 +1,11 @@
+const monggose = require('mongoose');
+
+mongoose.set('strictQuery', true);
+
+mongoose.connect(process.env.DATABASE_URL);
+
+const db = mongoose.connection
+
+db.on('connected', function() {
+    console.log(`connect to mongooseDB ${db.name} at ${db.host}:${db.port}`)
+})
