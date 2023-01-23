@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<h2>Enter a New Dog</h2>
+<form action="/movies" method="POST">
+  <label>Name:
+    <input type="text" name="title">
+  </label><br>
+  <label>Birthdate:
+    <input type="number" name="birthdate">
+  </label><br>
+  <label>Breed
+    
+
+  <label>Location:
+    <input type="text" name="location">
+  </label><br>
+  <br>
+  <hr>
+  <h2>Bio</h2>
+  <textarea name="content"></textarea>
+
+
+  <button type="submit">Add Dog</button>
+</form>
+
+<%- include('../partials/footer') %>
