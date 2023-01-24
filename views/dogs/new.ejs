@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
 
 <h2>Enter a New Dog</h2>
-<form action="/movies" method="POST">
+<form action="/dogs" method="POST">
   <label>Name:
-    <input type="text" name="title">
+    <input type="text" name="name">
   </label><br>
   <label>Birthdate:
-    <input type="number" name="birthdate">
+    <input type="date" name="birthdate">
   </label><br>
-  <label>Breed
-    
+  <label>Breed:
+    <input type="text" name="breed">
 
   <label>Location:
     <input type="text" name="location">
@@ -17,9 +17,28 @@
   <br>
   <hr>
   <h2>Bio</h2>
-  <textarea name="content"></textarea>
+  <textarea name="bio"></textarea>
+ 
+  <br>
+  <hr>
+  <h2> Favorites
+  <h4>
+  <label>Park:
+    <textarea name="park"></textarea>
+  <label>Pet Store:
+    <textarea name="petStore"></textarea>  
+  </label><br>
+  <label>Snack:
+    <textarea name="snack"></textarea>  
+  </label><br>
+  <label>Veterinarian:  
+    <textarea name="veterinarian"></textarea>
+  </label><br>
+  <label>Toy:
+    <textarea name="toy"></textarea>  
+  </label><br>
 
-
+  
   <button type="submit">Add Dog</button>
 </form>
 

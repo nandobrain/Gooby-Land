@@ -11,12 +11,14 @@
   <tbody>
     <% dogs.forEach(function(d) { %>
       <tr>
-        <td><%= d.dog %></td>
+        <td><%= d.name %></td>
         <td><%= d.breed %></td>
         <td><a href="/dogs/<%= d._id %>">Info</a></td>
       </tr>
       <% }); %>
     </tbody>
   </table>
-  
-<%- include('../partials/footer') %>
+  <!-- <a href='/dogs/new'> add a dog</a>
+  <button type="submit" href='/dogs/new'>Add Dog</button> -->
+
+  <%- include('../partials/footer') %>
