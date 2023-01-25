@@ -21,8 +21,65 @@
   <div><%= dog.snack %></div>
   <div><%= dog.veterinarian %></div>
   <div><%= dog.toy %></div>
-  
+
+
+
+    </form>
 
   </selection>
+  <a href="/dogs/<%= dog._id%>/edit">Edit Dog</a>
+  
+
+
+
+  <br><br><h2>Comments</h2>
+<% if(user) { %>
+  <form id="add-comment-form" method="POST"
+    action="/dogs/<%= dog._id %>/comments">
+    <label>Comment:</label>
+    <textarea name="comments"></textarea>
+    <input type="submit" value="Add Comment">
+  </form>
+<% } %>
+<% if (dog.comments.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+          <th>Comment</th>
+         
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+       
+        <% dog.comments.forEach(function(c) { %>
+         
+          <tr>
+            <td class="comment-user"> <%= c.userName %></td>
+            <td><%= c.createdAt.toLocaleDateString() %></td>
+            <td><%= c.content %></td>
+            
+            <td>
+              <% if (user?._id.equals(c.user)) { %>
+                <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
+              <% } %>
+            </td>
+          </tr>
+        <% }); %>
+        <tr>
+          <td colspan="3"></td>
+          <td><strong><%= (dog.comments.length).toFixed(1) %></strong></td>
+        </tr>
+      </tbody>
+    </table>
+    
+  <% } else { %>
+    <h5>No comments Yet</h5>
+  <% } %>
+    
 
 <%- include('../partials/footer') %>

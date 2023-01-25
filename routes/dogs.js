@@ -8,5 +8,8 @@ router.get('/', dogsCtrl.index);
 router.get('/new', ensureLoggedIn, dogsCtrl.new)
 router.get('/:id', dogsCtrl.show)
 router.post('/', ensureLoggedIn, dogsCtrl.create)
+router.get('/:id/edit', ensureLoggedIn, dogsCtrl.edit)
+router.put('/:id', ensureLoggedIn, dogsCtrl.update)
+router.delete('/:id', ensureLoggedIn, dogsCtrl.delete)
 
 module.exports = router;
