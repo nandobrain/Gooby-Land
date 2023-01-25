@@ -68,7 +68,7 @@ async function deleteDog(req, res) {
     req.body.user = req.user
     Dog.findOneAndDelete({'_id':req.params.id}, req.body, function(err, dog) {
         console.log(dog, err)
-        res.redirect(`/dogs/${dog._id}`)
+        res.redirect(`/dogs/`)
     })
   
 }
