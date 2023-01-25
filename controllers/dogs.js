@@ -63,8 +63,13 @@ function update(req, res) {
 
 }
 
-function deleteDog(req, res) {
-    Dog.deleteOne(req.params.id)
-    res.redirect(`/dogs/${dog._id}`)
+async function deleteDog(req, res) {
+    console.log(req.body)
+    req.body.user = req.user
+    Dog.findOneAndDelete({'_id':req.params.id}, req.body, function(err, dog) {
+        console.log(dog, err)
+        res.redirect(`/dogs/${dog._id}`)
+    })
+  
 }
 
