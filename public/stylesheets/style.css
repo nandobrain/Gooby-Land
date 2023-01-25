@@ -1,7 +1,61 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: 'Poiret One';
+  color: black;
+
 }
+
+
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid=template-areas:
+  "nav"
+  "main"
+}
+
+body > nav {
+  background-color: rgb(181, 246, 137);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: space-between;
+  padding: 0 20px 0 30px;
+
+
+}
+
+nav > img {
+  width: 35px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+body > main {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  overflow-y: scroll;
+
+
+
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+  font-size: 20px;
+
+}
+
 
 a {
   color: #00B7FF;

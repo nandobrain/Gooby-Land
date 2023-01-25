@@ -12,6 +12,7 @@
   
     <a href="/dogs" <%- title === 'dogs' ? 'class="active"' : '' %>>ALL DOGS</a>
     <% if (user) { %>
+    
    
       <a href="/dogs/new" <%- title === 'add Dog' ? 'class="active"' : '' %>>ADD DOG</a>
       <a href="/logout">LOG OUT</a>
@@ -21,4 +22,3 @@
   </nav>
   
   <main>
-    <h1><%= title %></h1>
