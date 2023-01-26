@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<section id="show-page" >
+<section id="show-container" >
   <div>Name: </div>
   <div><%= dog.name %></div>
   <div>Birthdate: </div>
@@ -16,21 +16,33 @@
   <br>
   <hr>
   <div>Favorites </div>
+  <div>Dog Park:</div>
   <div><%= dog.park %></div>
+  <div>Pet Store:</div>
   <div><%= dog.petStore %></div>
+  <div>Snack:</div>
   <div><%= dog.snack %></div>
+  <div>Veterinarian:</div>
   <div><%= dog.veterinarian %></div>
+  <div>Toy:</div>
   <div><%= dog.toy %></div>
 
 
 
     </form>
+ </selection>
 
-  </selection>
+
   <a href="/dogs/<%= dog._id%>/edit">Edit Dog</a>
   
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
   <br><br><h2>Comments</h2>
 <% if(user) { %>
@@ -59,7 +71,7 @@
           <tr>
             <td class="comment-user"> <%= c.userName %></td>
             <td><%= c.createdAt.toLocaleDateString() %></td>
-            <td><%= c.content %></td>
+            <td><%= c.comments %></td>
             
             <td>
               <% if (user?._id.equals(c.user)) { %>
