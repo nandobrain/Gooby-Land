@@ -29,10 +29,9 @@ const dogSchema = new Schema({
     },
 
     birthdate: {
-        type: Date,
-        default: function() {
-            return new Date().getFullYear()
-        }
+        type: String,
+        required: true
+     
     },
 
 

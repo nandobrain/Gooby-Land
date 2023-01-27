@@ -12,42 +12,38 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: 50px 1fr;
-  grid=template-areas:
-  "nav"
-  "main"
+  
 }
 
 body > nav {
   background-color: rgb(0, 160, 94);
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  align-content: space-between;
+  align-content: flex-end;
   padding: 0 20px 0 30px;
 
 
 }
 
-nav > img {
-  width: 35px;
-  object-fit: contain;
-  margin-right: auto;
-}
+
 
 body > main {
   background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: left;
+
   padding: 50px;
-  overflow-y: scroll;
+  
 
 
 
 }
 
-body > main h1:first-child {
-  margin-bottom: 50px;
+nav > img {
+  object-fit: contain;
+  margin-right: auto;
+  height: 45px;
+  width: 45px;
 }
 
 nav > a {
@@ -57,15 +53,15 @@ nav > a {
   border-radius: 5px;
   color: white;
   font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
 
 }
-
 
 
  img {
   width: 65%;
   height: auto;
-  flex-direction: column;
   display: flex;
   align-items: center;
 }
@@ -91,11 +87,11 @@ table td {
   text-align: center;
 }
 
-#list td:nth-child(2), #list td:nth-child(3){
+#home td:nth-child(2), #list td:nth-child(3){
   min-width: 100px;
 }
 
-#list a {
+#home a {
   border-radius: 4px;
   background-color: rgb(0, 160, 94);
   padding: 4px;
@@ -108,9 +104,11 @@ table td {
   height: 600px;
   width: 500px;
   border: 2px solid orange;
+  padding: 10px;
   margin: .5rem;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 5px;
   background-color: rgb(254, 248, 225)
  

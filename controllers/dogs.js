@@ -26,6 +26,7 @@ function newDog(req, res) {
 
 function create(req, res) {
     console.log('req, ', req.user )
+    req.body.user = req.user._id
     req.body.user = req.user
     const dog = new Dog(req.body)
     dog.save(function(err) {
@@ -45,6 +46,8 @@ function show(req, res) {
 
 async function edit(req, res) {
     console.log(req.params.id)
+    req.body.user = req.user._id
+    req.body.user = req.user
     Dog.findById(req.params.id, function(err, dog) {
         console.log(dog, err)
     res.render('dogs/edit', { title: 'edit dog', dog })
