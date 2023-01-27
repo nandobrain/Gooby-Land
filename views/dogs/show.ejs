@@ -1,33 +1,79 @@
 <%- include('../partials/header') %>
 
 <section class="show-container" >
+  <div class="display-box">
+    <div class="top-row">
+       <h1><%= dog.name %></h1>
+    </div>   
+    <div class="second-row">
+      <div class="col-1">
+        <img src="https://i.imgur.com/1M8CWuL.jpg" title="source: imgur.com" />
+      </div>
+      <div class="col-2">
+        <ul>
+          <div>Name: </div>
+          <div>Birthdate: </div>
+          <div>Breed: </div>
+          <div>Location: </div>
+        </ul>
+      </div>
+     
+    <div class="col-3">
+      <ul>    
+        <div><%= dog.name %></div>
   
-  <div>Name: </div>
-  <div><%= dog.name %></div>
-  <div>Birthdate: </div>
-  <div><%= dog.birthdate %></div>
-  <div>Breed: </div>
-  <div><%= dog.breed %></div>
-  <div>Location: </div>
-  <div><%= dog.location %></div>
+        <div><%= dog.birthdate %></div>
+  
+        <div><%= dog.breed %></div>
+  
+        <div><%= dog.location %></div>
+      </ul>
+    </div>
+  </div>      
   <br>
   <hr>
-  <div>Bio <div>
-  <div><%= dog.bio %></div>
-  <br>
-  <hr>
-  <div>Favorites </div>
-  <div>Dog Park:</div>
-  <div><%= dog.park %></div>
-  <div>Pet Store:</div>
-  <div><%= dog.petStore %></div>
-  <div>Snack:</div>
-  <div><%= dog.snack %></div>
-  <div>Veterinarian:</div>
-  <div><%= dog.veterinarian %></div>
-  <div>Toy:</div>
-  <div><%= dog.toy %></div>
+  <div class="middle-row">
+    <h3>BIO </h3>
+      <div><%= dog.bio %></div>
+  </div>
+  
 
+
+  <br>
+  <hr>
+
+  <div class="fourth-row">
+    <h3> FAVORITES </h3>
+  </div>
+  <div class="bottom-row">
+    <div class="col-1">
+      <ul>
+
+        
+          <div>Dog Park:</div>
+          <div>Pet Store:</div>
+          <div>Snack:</div>
+          <div>Veterinarian:</div>
+          <div>Toy:</div>
+      </ul>
+    </div>
+    <div class="col-2">
+      <ul>    
+        <div></div>  
+        <div><%= dog.park %></div>
+  
+        <div><%= dog.petStore %></div>
+  
+        <div><%= dog.snack %></div>
+  
+        <div><%= dog.veterinarian %></div>
+  
+        <div><%= dog.toy %></div>
+      </ul>
+    </div>
+   </div>
+  </div>
+ </div>    
 
 
     </form>
@@ -44,9 +90,13 @@
 <br>
 <br>
 <br>
-
+<div class="comments-container">
+  <div class="comment-box">
   <br><br><h2>Comments</h2>
+  
+
 <% if(user) { %>
+  <div class="box-1">
   <form id="add-comment-form" method="POST"
     action="/dogs/<%= dog._id %>/comments">
     <label>Comment:</label>
@@ -55,7 +105,7 @@
   </form>
 <% } %>
 <% if (dog.comments.length) { %>
-    <table>
+    <table class="box-2">
       <thead>
         <tr>
           <th>User</th>
@@ -89,6 +139,8 @@
         </tr>
       </tbody>
     </table>
+  </div>
+  </div>
     
   <% } else { %>
     <h5>No comments Yet</h5>
