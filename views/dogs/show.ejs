@@ -99,7 +99,7 @@
   <div class="box-1">
   <form id="add-comment-form" method="POST"
     action="/dogs/<%= dog._id %>/comments">
-    <label>Comment:</label>
+    
     <textarea name="comments"></textarea>
     <input type="submit" value="Add Comment">
   </form>
@@ -129,7 +129,7 @@
             <td>
               <% if (user?._id.equals(c.user)) { %>
                 <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
+                  <button type="submit">Delete</button>
                 </form>
               <% } %>
             </td>
